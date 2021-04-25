@@ -1,3 +1,4 @@
+require './lib/bisiesto.rb'
 RSpec.describe "bisiesto" do
     #primer ciclo
     it "Para el año 4 deberia devolver true" do
@@ -27,8 +28,18 @@ RSpec.describe "bisiesto" do
     it "Para el año 1200 deberia devolver true" do
         expect(es_bisiesto(1200)).to eq(true)
     end
+    #quinto ciclo
+    it "Para el año 1600 deberia devolver true" do
+        expect(es_bisiesto(1600)).to eq(true)
+    end
+    it "Para el año 2003 deberia devolver false" do
+        expect(es_bisiesto(2003)).to eq(false)
+    end
+    it "Para el año 2020 deberia devolver true" do
+        expect(es_bisiesto(2020)).to eq(true)
+    end
+    it "Para el año 2021 deberia devolver false" do
+        expect(es_bisiesto(2021)).to eq(false)
+    end
 end
 
-def es_bisiesto(anio)
-    return (anio%4==0 && anio%100!=0) || (anio%4==0 && anio%400==0)
-end
