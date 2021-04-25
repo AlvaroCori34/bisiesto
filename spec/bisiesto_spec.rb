@@ -20,8 +20,15 @@ RSpec.describe "bisiesto" do
     it "Para el año 310 deberia devolver false" do
         expect(es_bisiesto(310)).to eq(false)
     end
+    #cuarto ciclo
+    it "Para el año 400 deberia devolver true" do
+        expect(es_bisiesto(400)).to eq(true)
+    end
+    it "Para el año 1200 deberia devolver true" do
+        expect(es_bisiesto(1200)).to eq(true)
+    end
 end
 
 def es_bisiesto(anio)
-    return anio%4==0 && anio%100!=0
+    return (anio%4==0 && anio%100!=0) || (anio%4==0 && anio%400==0)
 end
